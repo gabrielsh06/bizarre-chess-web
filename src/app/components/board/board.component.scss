@@ -1,0 +1,18 @@
+.board {
+    width: 100%;
+    display: grid;
+    grid-template-columns:  repeat(var(--columns), 1fr);
+    aspect-ratio: 1 / 1;
+    border: 1px solid black;
+
+    &__square {
+        background-color: #f0d9b5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &--dark {
+            background-color: #b58863;
+        }
+    }
+}

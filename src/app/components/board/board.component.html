@@ -1,0 +1,9 @@
+<div class="board" [style.--columns]="board().columns">
+    @for (square of squares(); track $index) {
+        <div class="board__square" [class.board__square--dark]="(square.row + square.column) % 2 !== 0">
+            @if (getPieceAt(square.row, square.column); as piece) {
+                <span class="board__piece">{{ piece.type }}</span>
+            }
+        </div>
+    }
+</div>
