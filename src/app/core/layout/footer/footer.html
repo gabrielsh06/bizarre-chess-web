@@ -1,1 +1,59 @@
-<p>footer works!</p>
+<footer class="footer">
+  <div class="footer__container">
+    <div class="footer__brand">
+      <strong class="footer__brand-title">BIZARRE CHESS</strong>
+      <small class="footer__version">Open source - {{ version }}</small>
+    </div>
+    <nav class="footer__group footer__group--code" aria-label="Source code and repositories">
+      <span class="footer__group-title">Code</span>
+      <ul class="footer__links">
+        @for (link of codeLinks; track link.name) {
+          <li class="footer__item">
+            <a
+              [href]="link.url"
+              class="footer__link {{ link.cssClass }}"
+              [attr.aria-label]="link.name"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                [ngSrc]="link.iconPath"
+                width="36"
+                height="36"
+                [alt]="link.name"
+                class="footer__link-icon"
+              />
+              <span class="footer__link-label">
+                {{ link.name }}
+              </span>
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+    <nav class="footer__group footer__group--community" aria-label="Community">
+      <span class="footer__group-title">Community</span>
+      <ul class="footer__links">
+        @for (link of communityLinks; track link.name) {
+          <li class="footer__item">
+            <a
+              [href]="link.url"
+              class="footer__link {{ link.cssClass }}"
+              [attr.aria-label]="link.name"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                [ngSrc]="link.iconPath"
+                width="48"
+                height="36"
+                [alt]="link.name"
+                class="footer__link-icon"
+              />
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+  </div>
+</footer>
