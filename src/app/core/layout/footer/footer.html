@@ -4,10 +4,7 @@
       <strong class="footer__brand-title">BIZARRE CHESS</strong>
       <small class="footer__version">Open source - {{ version }}</small>
     </div>
-    <nav
-      class="footer__group footer__group--code"
-      aria-label="Source code and repositories"
-    >
+    <nav class="footer__group footer__group--code" aria-label="Source code and repositories">
       <span class="footer__group-title">Code</span>
       <ul class="footer__links">
         @for (link of codeLinks; track link.name) {
@@ -17,15 +14,13 @@
               class="footer__link {{ link.cssClass }}"
               [attr.aria-label]="link.name"
               target="_blank"
-              rel="noopener noreferrer"
-            >
+              rel="noopener noreferrer">
               <img
                 [ngSrc]="link.iconPath"
                 width="36"
                 height="36"
                 [alt]="link.name"
-                class="footer__link-icon"
-              />
+                class="footer__link-icon" />
               <span class="footer__link-label">
                 {{ link.name }}
               </span>
@@ -34,10 +29,7 @@
         }
       </ul>
     </nav>
-    <nav
-      class="footer__group footer__group--community"
-      aria-label="Community"
-    >
+    <nav class="footer__group footer__group--community" aria-label="Community">
       <span class="footer__group-title">Community</span>
       <ul class="footer__links">
         @for (link of communityLinks; track link.name) {
@@ -47,15 +39,13 @@
               class="footer__link {{ link.cssClass }}"
               [attr.aria-label]="link.name"
               target="_blank"
-              rel="noopener noreferrer"
-            >
+              rel="noopener noreferrer">
               <img
                 [ngSrc]="link.iconPath"
                 width="48"
                 height="36"
                 [alt]="link.name"
-                class="footer__link-icon"
-              />
+                class="footer__link-icon" />
             </a>
           </li>
         }

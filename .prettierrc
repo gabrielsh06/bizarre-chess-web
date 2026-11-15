@@ -14,8 +14,8 @@
       "options": {
         "parser": "angular",
         "htmlWhitespaceSensitivity": "ignore",
-        "bracketSameLine": false,
-        "singleAttributePerLine": true
+        "bracketSameLine": true,
+        "singleAttributePerLine": false
       }
     },
     {
