@@ -1,16 +1,21 @@
 import { Component, inject, signal } from '@angular/core';
 import { GameHttp } from '../services/game-http';
 import { BoardResponse } from '../models/game-board';
+import { Board } from '../components/board/board';
 
 @Component({
-  imports: [],
+  imports: [Board],
   selector: 'app-game',
   styleUrl: './game.scss',
   templateUrl: './game.html',
 })
 export class Game {
   private gameHttp = inject(GameHttp);
-  board = signal<BoardResponse | undefined>(undefined);
+  board = signal<BoardResponse>({
+    rows: 8,
+    columns: 8,
+    pieces: [],
+  });
   gameCode = signal<string>('');
 
   createGame() {

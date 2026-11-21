@@ -1,0 +1,12 @@
+<div class="board" [style.--board-columns]="board().columns">
+  @for (square of squares(); track square.id) {
+    <div
+      class="board__square"
+      [class.board__square--black]="square.color === 'BLACK'"
+      [class.board__square--white]="square.color === 'WHITE'">
+      @if (square.piece) {
+        <span>{{ square.piece.type }}</span>
+      }
+    </div>
+  }
+</div>

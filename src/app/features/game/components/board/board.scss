@@ -1,0 +1,19 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(var(--board-columns), 1fr);
+
+  &__square {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--black {
+      background-color: var(--board-square-dark);
+    }
+
+    &--white {
+      background-color: var(--board-square-light);
+    }
+  }
+}
