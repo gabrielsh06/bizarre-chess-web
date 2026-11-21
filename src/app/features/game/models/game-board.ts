@@ -18,3 +18,11 @@ export interface PieceResponse {
   row: number;
   column: number;
 }
+
+export interface Square {
+  id: string;
+  row: number;
+  column: number;
+  color: Color;
+  piece?: PieceResponse;
+}
