@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { GameHttp } from '../services/game-http';
-import { BoardResponse } from '../models/game-board';
+import { type BoardResponse } from '../models/game-board';
 import { Board } from '../components/board/board';
 
 @Component({

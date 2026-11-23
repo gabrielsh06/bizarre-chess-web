@@ -5,7 +5,7 @@
       [class.board__square--black]="square.color === 'BLACK'"
       [class.board__square--white]="square.color === 'WHITE'">
       @if (square.piece) {
-        <span>{{ square.piece.type }}</span>
+        <span>{{ square.piece.type | pieceIcon}}</span>
       }
     </div>
   }

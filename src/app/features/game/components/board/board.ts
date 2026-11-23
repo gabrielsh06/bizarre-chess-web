@@ -1,8 +1,9 @@
 import { Component, computed, input } from '@angular/core';
-import { BoardResponse, Square, Color } from '../../models/game-board';
+import { type BoardResponse, type Square } from '../../models/game-board';
+import { PieceIcon } from '../../pipes/piece-icon';
 
 @Component({
-  imports: [],
+  imports: [PieceIcon],
   selector: 'app-board',
   styleUrl: './board.scss',
   templateUrl: './board.html',
