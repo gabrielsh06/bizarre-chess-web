@@ -7,6 +7,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    user-select: none;
+
+    &--has-piece {
+      cursor: pointer;
+    }
 
     &--black {
       background-color: var(--board-square-dark);
@@ -14,6 +19,13 @@
 
     &--white {
       background-color: var(--board-square-light);
+    }
+
+    &--selected {
+      outline: 3px solid var(--move-indicator);
+      outline-offset: -3px;
+      background-color: var(--square-highlight);
+      z-index: 1;
     }
   }
 }

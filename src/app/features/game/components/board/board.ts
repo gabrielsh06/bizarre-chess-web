@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, input, output, signal } from '@angular/core';
 import { type BoardResponse, type Square } from '../../models/game-board';
 import { PieceIcon } from '../../pipes/piece-icon';
 
@@ -30,4 +30,26 @@ export class Board {
     }
     return result;
   });
+
+  selectedSquare = signal<Square | null>(null);
+  move = output<{ from: Square; to: Square }>();
+
+  selectSquare(target: Square) {
+    const current = this.selectedSquare();
+
+    if (!current) {
+      if (target.piece) {
+        this.selectedSquare.set(target);
+      }
+      return;
+    }
+
+    if (current.id === target.id) {
+      this.selectedSquare.set(null);
+      return;
+    }
+
+    this.move.emit({ from: current, to: target });
+    this.selectedSquare.set(null);
+  }
 }

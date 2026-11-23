@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { GameHttp } from '../services/game-http';
-import { type BoardResponse } from '../models/game-board';
+import { type BoardResponse, type Square } from '../models/game-board';
 import { Board } from '../components/board/board';
 
 @Component({
@@ -36,5 +36,17 @@ export class Game {
       },
       error: (error) => console.log('Game not found', error),
     });
+  }
+
+  onMovePiece(event: { from: Square; to: Square }) {
+    this.board.update((boardState) => ({
+      ...boardState,
+      pieces: boardState.pieces.map((piece) => {
+        if (piece.row === event.from.row && piece.column === event.from.column) {
+          return { ...piece, row: event.to.row, column: event.to.column };
+        }
+        return piece;
+      }),
+    }));
   }
 }

@@ -29,6 +29,6 @@
         </div>
       </div>
     </div>
-    <app-board [board]="board()" />
+    <app-board [board]="board()" (move)="onMovePiece($event)" />
   </div>
 </main>
