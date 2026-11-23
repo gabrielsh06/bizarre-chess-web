@@ -20,11 +20,15 @@
             placeholder="Enter code"
             autocomplete="off"
             (keyup.enter)="joinGame(codeInput.value)" />
-          <button (click)="joinGame(codeInput.value)" type="button" class="game__btn game__btn--join">
+          <button
+            (click)="joinGame(codeInput.value)"
+            type="button"
+            class="game__btn game__btn--join">
             Join
           </button>
         </div>
       </div>
     </div>
+    <app-board [board]="board()" (move)="onMovePiece($event)" />
   </div>
 </main>

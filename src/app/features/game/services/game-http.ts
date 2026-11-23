@@ -1,6 +1,6 @@
 import { inject, Service } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BoardResponse, CreateGameResponse } from '../models/game-board';
+import { type BoardResponse, type CreateGameResponse } from '../models/game-board';
 import { environment } from '@env';
 import { Observable } from 'rxjs';
 
