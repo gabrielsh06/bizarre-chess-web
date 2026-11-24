@@ -29,6 +29,14 @@
         </div>
       </div>
     </div>
+    @if (gameCode()) {
+      <div class="game__code-display">
+        <span>
+          Game Code:
+          <strong>{{ gameCode() }}</strong>
+        </span>
+      </div>
+    }
     <app-board [board]="board()" (move)="onMovePiece($event)" />
   </div>
 </main>
