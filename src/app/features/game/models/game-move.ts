@@ -10,3 +10,10 @@ export interface MoveResult {
   gameState: GameState | null;
   nextTurn: Color | null;
 }
+
+export interface MoveRequest {
+  fromRow: number;
+  fromColumn: number;
+  toRow: number;
+  toColumn: number;
+}
