@@ -1,5 +1,8 @@
 <main class="game">
   <div class="game__container">
+    <div class="game__title">
+      <h1>BIZARRE CHESS</h1>
+    </div>
     <div class="game__lobby">
       <div class="game__create">
         <span class="game__label game__label--create">Create your game</span>
@@ -29,14 +32,16 @@
         </div>
       </div>
     </div>
-    @if (gameCode()) {
-      <div class="game__code-display">
-        <span>
-          Game Code:
-          <strong>{{ gameCode() }}</strong>
-        </span>
-      </div>
-    }
-    <app-board [board]="board()" (move)="onMovePiece($event)" />
+    <div class="game__chess">
+      @if (gameCode()) {
+        <div class="game__code-display">
+          <span>
+            Game Code:
+            <strong>{{ gameCode() }}</strong>
+          </span>
+        </div>
+      }
+      <app-board [board]="board()" (move)="onMovePiece($event)" />
+    </div>
   </div>
 </main>

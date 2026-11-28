@@ -3,6 +3,7 @@
   grid-template-columns: repeat(var(--board-columns), 1fr);
 
   &__square {
+    position: relative;
     aspect-ratio: 1;
     display: flex;
     align-items: center;
@@ -26,6 +27,45 @@
       outline-offset: -3px;
       background-color: var(--square-highlight);
       z-index: 1;
+    }
+  }
+
+  &__coordinate {
+    position: absolute;
+    pointer-events: none;
+    font-size: 0.8rem;
+
+    &--rank {
+      top: 3px;
+      left: 3px;
+    }
+
+    &--file {
+      bottom: 3px;
+      right: 3px;
+    }
+  }
+
+  &__square--white &__coordinate {
+    color: var(--board-square-dark);
+  }
+
+  &__square--black &__coordinate {
+    color: var(--board-square-light);
+  }
+
+  &__piece {
+    font-size: 1.5rem;
+    line-height: 1;
+
+    &--white {
+      color: #f8fafc;
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.7));
+    }
+
+    &--black {
+      color: #1e293b;
+      filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.4));
     }
   }
 }
