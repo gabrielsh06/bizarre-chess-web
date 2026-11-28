@@ -3,6 +3,7 @@
   grid-template-columns: repeat(var(--board-columns), 1fr);
 
   &__square {
+    position: relative;
     aspect-ratio: 1;
     display: flex;
     align-items: center;
@@ -27,6 +28,30 @@
       background-color: var(--square-highlight);
       z-index: 1;
     }
+  }
+
+  &__coordinate {
+    position: absolute;
+    pointer-events: none;
+    font-size: 0.8rem;
+
+    &--rank {
+      top: 3px;
+      left: 3px;
+    }
+
+    &--file {
+      bottom: 3px;
+      right: 3px;
+    }
+  }
+
+  &__square--white &__coordinate {
+    color: var(--board-square-dark);
+  }
+
+  &__square--black &__coordinate {
+    color: var(--board-square-light);
   }
 
   &__piece {

@@ -52,4 +52,8 @@ export class Board {
     this.move.emit({ from: current, to: target });
     this.selectedSquare.set(null);
   }
+
+  getFileLabel(column: number): string {
+    return String.fromCharCode(97 + column);
+  }
 }
