@@ -8,7 +8,12 @@
       [class.board__square--selected]="selectedSquare()?.id === square.id"
       (click)="selectSquare(square)">
       @if (square.piece) {
-        <span>{{ square.piece.type | pieceIcon }}</span>
+        <span
+          class="board__piece"
+          [class.board__piece--white]="square.piece.color === 'WHITE'"
+          [class.board__piece--black]="square.piece.color === 'BLACK'">
+          {{ square.piece.type | pieceIcon }}
+        </span>
       }
     </div>
   }
